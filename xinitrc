@@ -26,7 +26,11 @@ mpd&
 # Status bar
 dwmstatus&
 
+# Conky - because every desktop needs a little rice
+#xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
+#conky -d; sleep 1 && transset-df .5 -n Conky&
+
 # Who needs f.lux?
-redshift -c ~/.redshift&
+#redshift -c ~/.redshift&
 
 exec /usr/bin/dwm
