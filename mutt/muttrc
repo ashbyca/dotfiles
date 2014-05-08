@@ -35,7 +35,7 @@ source "~/.mutt/accounts/goatman93gmail.account"
 # We must set it right now otherwise the 'folder' variable will change in the next sourced file.
 folder-hook goatman93@gmail.com 'source ~/.mutt/accounts/goatman93gmail.account'
 
-# Gmail (Professional)
+# Gmail (Everything else)
 source "~/.mutt/accounts/colinrmahnsgmail.account"
 folder-hook colinrmahns@gmail.com 'source ~/.mutt/accounts/colinrmahnsgmail.account'
 
