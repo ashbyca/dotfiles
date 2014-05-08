@@ -1,0 +1,22 @@
+set my_njituser = crm38@njit.edu 
+
+## Receive options.
+set imap_user=$my_njituser
+set imap_pass=$my_njitpass
+set folder = imaps://$my_njituser@imap.gmail.com/
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+
+## Send options.
+set smtp_url=smtps://$my_njituser:$my_njitpass@smtp.gmail.com
+set realname='Colin Mahns'
+set from=$my_njituser
+set hostname="gmail.com"
+#set signature=~/.mutt/sigs/gmail.sig
+# Connection options
+set ssl_force_tls = yes
+unset ssl_starttls
+
+## Hook -- IMPORTANT!
+account-hook $folder "set imap_user=$my_njituser imap_pass=$my_njitpass"

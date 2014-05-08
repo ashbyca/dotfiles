@@ -12,20 +12,20 @@ set mail_check = 60
 set mbox_type=Maildir
 set sort=threads 
 set sig_on_top = yes
-my_header="X-PGP-Key: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x89BF838C"
+#my_header="X-PGP-Key: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x89BF838C"
 
 # Hide some stuff
 set user_agent=no
 
 # Addresses
-set alias_file = "~/Documents/contacts"
-source $alias_file
+#set alias_file = "~/Documents/contacts"
+#source $alias_file
 
 ## Passwords
-set my_goatman93pass=`pass mutt/goatman93gmail`
-set my_colinrmahnspass=`pass mutt/colinrmahnsgmail`
+set my_junkpass=`pass mutt/goatman93gmail`
+set my_personalpass=`pass mutt/colinrmahnsgmail`
 set my_brookdalepass=`pass mutt/brookdale`
-set my_njitpass=`pass mutt/njit`
+set my_njitpass=`pass /mutt/njit`
 
 ## Accounts
 
@@ -45,7 +45,7 @@ folder-hook cmahns1@mail.brookdalecc.edu 'source ~/.mutt/accounts/brookdale.acco
 
 # NJIT
 source "~/.mutt/accounts/njit.account"
-folder-hook crm38@njit.edu 'source ~/mutt/accounts/njit.account'
+folder-hook crm38@njit.edu 'source ~/.mutt/accounts/njit.account'
 
 ## Shortcuts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/goatman93gmail.account<enter><change-folder>!<enter>'

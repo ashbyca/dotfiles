@@ -1,0 +1,22 @@
+set my_junkuser = goatman93@gmail.com 
+
+## Receive options.
+set imap_user=$my_junkuser
+set imap_pass=$my_junkpass
+set folder = imaps://$my_junkuser@imap.gmail.com/
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+
+## Send options.
+set smtp_url=smtps://$my_junkuser:$my_junkpass@smtp.gmail.com
+set realname='Colin Mahns'
+set from=$my_junkuser
+set hostname="gmail.com"
+#set signature=~/.mutt/sigs/gmail.sig
+# Connection options
+set ssl_force_tls = yes
+unset ssl_starttls
+
+## Hook -- IMPORTANT!
+account-hook $folder "set imap_user=$my_junkuser imap_pass=$my_junkpass"

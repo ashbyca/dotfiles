@@ -1,0 +1,22 @@
+set my_brookdaleuser = cmahns1@mail.brookdalecc.edu 
+
+## Receive options.
+set imap_user=$my_brookdaleuser
+set imap_pass=$my_brookdalepass
+set folder = imaps://$my_brookdaleuser@imap.gmail.com/
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+
+## Send options.
+set smtp_url=smtps://$my_brookdaleuser:$my_brookdalepass@smtp.gmail.com
+set realname='Colin Mahns'
+set from=$my_brookdaleuser
+set hostname="mail.brookdalecc.edu"
+#set signature=~/.mutt/sigs/gmail.sig
+# Connection options
+set ssl_force_tls = yes
+unset ssl_starttls
+
+## Hook -- IMPORTANT!
+account-hook $folder "set imap_user=$my_brookdaleuser imap_pass=$my_brookdalepass"
