@@ -22,7 +22,7 @@ alias ifconfig='ip addr'
 alias firefox='iceweasel'
 
 # BOFH
-alias excuse='telnet towel.blinkenlights.nl 666'
+alias excuse='nc towel.blinkenlights.nl 666'
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
