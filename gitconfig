@@ -1,3 +1,5 @@
 [user]
 	name = Colin Mahns
-	email = colinrmahns@gmail.com
+	email = colinmahns@riseup.net
+[push]
+	default = simple
