@@ -19,7 +19,6 @@ alias shutup='sudo !!'
 # Stupid aliases that only exist because I'm too stupid to remember the actual command
 alias unmount='umount'
 alias ifconfig='ip addr'
-alias firefox='iceweasel'
 
 # BOFH
 alias excuse='nc towel.blinkenlights.nl 666'
