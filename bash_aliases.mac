@@ -1,12 +1,32 @@
 # Put aliases here!
 # set some to run in background automatically using &
+
+# Apple ships OS X without many of the GNU coreutils I'm used to, and when they do they are usually many years old
+# These aliases exist so I can stay sane when I'm using a machine running OS X
+# to get this environment set up, make sure you've run
+# brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep homebrew/dupes/openssh ssh-copy-id
+# some of the above packages are not called down here, but are useful to have (like ssh-copy-id)
+
 alias ls='/usr/local/bin/gls --color=auto'
 alias ll='ls -AlhF'
 alias la='ls -Ah'
 alias l='ls -CF'
+# will need to be changed for every update to openssh
 alias ssh='/usr/local/Cellar/openssh/6.7p1/bin/ssh'
 alias ..='cd ..'
 alias uname='/usr/local/bin/guname'
+alias grep='/usr/local/bin/ggrep'
+alias egrep='/usr/local/bin/gegrep'
+alias fgrep='/usr/local/bin/gfgrep'
+alias md5sum='/usr/local/bin/md5sum'
+alias sha1sum='/usr/local/bin/sha1sum'
+alias sha256sum='/usr/local/bin/sha256sum'
+alias sha512sum='/usr/local/bin/sha512sum'
+alias sed='/usr/local/bin/gsed'
+alias awk='/usr/local/bin/gawk'
+alias echo='/usr/local/bin/gecho'
+alias tar='/usr/local/bin/gtar'
+
 # Check to make sure I actully want to do it
 alias rm='/usr/local/bin/grm -I'
 alias cp='/usr/local/bin/gcp -i'
@@ -22,7 +42,7 @@ alias unmount='umount'
 alias excuse='nc towel.blinkenlights.nl 666'
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
+if [ -x /usr/local/bin/gdircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
     
