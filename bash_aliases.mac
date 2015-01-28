@@ -8,7 +8,7 @@
 # some of the above packages are not called down here, but are useful to have (like ssh-copy-id)
 
 # will need to be changed for every update to bash
-#alias bash='/usr/local/Cellar/bash/4.3.33/bin/bash'
+alias bash='/usr/local/Cellar/bash/4.3.33/bin/bash'
 alias ls='/usr/local/bin/gls --color=auto'
 alias ll='ls -AlhF'
 alias la='ls -Ah'
@@ -17,7 +17,7 @@ alias l='ls -CF'
 alias ssh='/usr/local/Cellar/openssh/6.7p1/bin/ssh'
 alias openssl='/usr/local/Cellar/openssl/1.0.2/bin/openssl'
 alias ..='cd ..'
-alias cat=/usr/local/bin/gcat'
+alias cat='/usr/local/bin/gcat'
 alias uname='/usr/local/bin/guname'
 alias grep='/usr/local/bin/ggrep'
 alias egrep='/usr/local/bin/gegrep'
