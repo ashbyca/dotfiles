@@ -1,0 +1,36 @@
+#!/bin/sh
+#eval $(gpg-agent --daemon --enable-ssh-support --write-env-file ${HOME}/.gnupg/gpg-agent.env)&
+
+# No trackpad tapping
+/usr/bin/synclient MaxTapTime=0
+
+# Disable system beep
+xset -b
+
+# Mute by default
+amixer -q set Master mute
+amixer -q set Master 0
+
+# Autolock after 10 minutes
+xautolock -time 10 -locker slock -corners ----&
+
+# Libnotify
+dunst&
+
+# Set background
+feh --bg-scale ~/Pictures/Wallpapers/current.jpg&
+
+# Music
+mpd&
+
+# Status bar
+dwmstatus&
+
+# Conky - because every desktop needs a little rice
+#xcompmgr -c -t-5 -l-5 -r4.2 -o.55 &
+#conky -d; sleep 1 && transset-df .5 -n Conky&
+
+# Who needs f.lux?
+#redshift -c ~/.redshift&
+
+exec /usr/local/bin/dwm
