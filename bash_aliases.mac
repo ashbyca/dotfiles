@@ -7,6 +7,7 @@
 # brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep homebrew/dupes/openssh ssh-copy-id
 # some of the above packages are not called down here, but are useful to have (like ssh-copy-id)
 
+alias bash='/usr/local/Cellar/bash/4.3.33/bin/bash'
 alias ls='/usr/local/bin/gls --color=auto'
 alias ll='ls -AlhF'
 alias la='ls -Ah'
