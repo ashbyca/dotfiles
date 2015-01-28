@@ -1,3 +1,11 @@
+# debian default, minus this one addition
+
+if [ `uname | grep Darwin` ]; then
+	# enable Homebrew coreutils
+	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+	export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
