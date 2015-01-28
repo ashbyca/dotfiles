@@ -42,14 +42,14 @@ alias unmount='umount'
 alias excuse='nc towel.blinkenlights.nl 666'
 
 # enable color support of ls and also add handy aliases
-if [ -x /usr/local/bin/gdircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+#if [ -x /usr/local/bin/gdircolors ]; then
+#    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+#    alias ls='ls --color=auto'
     
-	#alias grep='grep --line-number --with-filename --color=auto'
-    #alias fgrep='fgrep --line-number --with-filename --color=auto'
-    #alias egrep='egrep --line-number --with-filename --color=auto'
-fi
+#	alias grep='grep --line-number --with-filename --color=auto'
+#   alias fgrep='fgrep --line-number --with-filename --color=auto'
+#   alias egrep='egrep --line-number --with-filename --color=auto'
+#fi
 
 system-update() {
 	# pacman based (Arch Linux, Parabola)
