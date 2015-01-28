@@ -6,6 +6,7 @@
 # to get this environment set up, make sure you've run
 # brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep homebrew/dupes/openssh ssh-copy-id
 # some of the above packages are not called down here, but are useful to have (like ssh-copy-id)
+# many of these aliases are not needed if you use my .bash_profile, but this covers the flags I like to use with each command
 
 # will need to be changed for every update to bash
 alias bash='/usr/local/Cellar/bash/4.3.33/bin/bash'
@@ -19,9 +20,9 @@ alias openssl='/usr/local/Cellar/openssl/1.0.2/bin/openssl'
 alias ..='cd ..'
 alias cat='/usr/local/bin/gcat'
 alias uname='/usr/local/bin/guname'
-alias grep='/usr/local/bin/ggrep'
-alias egrep='/usr/local/bin/gegrep'
-alias fgrep='/usr/local/bin/gfgrep'
+alias grep='/usr/local/bin/ggrep --color=auto'
+alias egrep='/usr/local/bin/gegrep --color=auto'
+alias fgrep='/usr/local/bin/gfgrep --color=auto'
 alias md5sum='/usr/local/bin/md5sum'
 alias sha1sum='/usr/local/bin/sha1sum'
 alias sha256sum='/usr/local/bin/sha256sum'
