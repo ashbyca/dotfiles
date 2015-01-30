@@ -1,7 +1,11 @@
-# Settings for Chris Barry's mutt
-# Stolen by Colin Mahns
-# 2013-04-12
+# Shitty hacked together mutt config
 
+set charset utf-8
+# don't use shitty crypto
+set ssl_use_sslv2=no
+set ssl_use_sslv3=no
+set ssl_force_tls=yes
+set ssl_starttls=yes
 set header_cache = "~/.cache/mutt"
 set imap_check_subscribed
 set imap_keepalive = 300
@@ -25,7 +29,8 @@ set user_agent=no
 set my_junkpass=`pass mutt/goatman93gmail`
 set my_personalpass=`pass mutt/colinrmahnsgmail`
 set my_brookdalepass=`pass mutt/brookdale`
-set my_njitpass=`pass /mutt/njit`
+set my_njitpass=`pass mutt/njit`
+set my_riseuppadd=`padd mutt/riseup`
 
 ## Accounts
 
@@ -47,11 +52,16 @@ folder-hook cmahns1@mail.brookdalecc.edu 'source ~/.mutt/accounts/brookdale.acco
 source "~/.mutt/accounts/njit.account"
 folder-hook crm38@njit.edu 'source ~/.mutt/accounts/njit.account'
 
+# Riseup
+source "~/.mutt/accounts/riseup.account"
+folder-hook colinmahns@riseup.net 'source ~/.mutt/accounts/njit.account'
+
 ## Shortcuts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/goatman93gmail.account<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/colinrmahnsgmail.account<enter><change-folder>!<enter>'
 macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/accounts/brookdale.account<enter><change-folder>!<enter>'
 macro index,pager <f5> '<sync-mailbox><enter-command>source ~/.mutt/accounts/njit.account<enter><change-folder>!<enter>'
+macro index,pager <f6> '<sync-mailbox><enter-command>source ~/.mutt/accounts/riseup.account<enter><change-folder>!<enter>'
 
 
 # Random settings
@@ -71,5 +81,5 @@ alternative_order text/plain text/html
 set mime_forward=yes
 set mime_forward_rest=yes
 
-source "~/.mutt/colors/mutt-colors-solarized-dark-16.muttrc"
+#source "~/.mutt/colors/mutt-colors-solarized-dark-16.muttrc"
 source "~/.mutt/pgp"
