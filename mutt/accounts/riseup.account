@@ -2,7 +2,7 @@ set my_personaluser = colinmahns@riseup.net
 
 ## Receive options.
 set imap_user=$my_personaluser
-set imap_pass=$my_personalpass
+set imap_pass=$my_riseuppass
 set folder = imaps://$my_personaluser@imap.riseup.net/
 set spoolfile = +INBOX
 set postponed = +Drafts
