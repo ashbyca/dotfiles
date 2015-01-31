@@ -16,7 +16,7 @@ set hostname="gmail.com"
 #set signature=~/.mutt/sigs/gmail.sig
 # Connection options
 set ssl_force_tls = yes
-set ssl_starttls = yes
+#set ssl_starttls = yes
 
 ## Hook -- IMPORTANT!
 account-hook $folder "set imap_user=$my_njituser imap_pass=$my_njitpass"

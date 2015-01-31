@@ -1,17 +1,17 @@
-set my_personaluser = colinmahns@riseup.net 
+set my_riseupuser = colinmahns@riseup.net 
 
 ## Receive options.
-set imap_user=$my_personaluser
+set imap_user=$my_riseupuser
 set imap_pass=$my_riseuppass
-set folder = imaps://$my_personaluser@imap.riseup.net/
+set folder = imaps://$my_riseupuser@imap.riseup.net/
 set spoolfile = +INBOX
 set postponed = +Drafts
 set record = +Sent
 
 ## Send options.
-set smtp_url=smtps://$my_personaluser:$my_personalpass@smtp.riseup.net
+set smtp_url=smtps://$my_riseupuser:$my_riseuppass@smtp.riseup.net
 set realname='Colin Mahns'
-set from=$my_personaluser
+set from=$my_riseupuser
 set hostname="riseup.net"
 #set signature=~/.mutt/sigs/gmail.sig
 # Connection options
@@ -19,4 +19,4 @@ set ssl_force_tls = yes
 set ssl_starttls = yes
 
 ## Hook -- IMPORTANT!
-account-hook $folder "set imap_user=$my_personaluser imap_pass=$my_personalpass"
+account-hook $folder "set imap_user=$my_riseupuser imap_pass=$my_riseuppass"
