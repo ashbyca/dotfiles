@@ -24,7 +24,7 @@ set user_agent=no
 #source $alias_file
 
 ## Passwords
-set my_junkpass=`pass mutt/goatman93gmail`
+#set my_junkpass=`pass mutt/goatman93gmail`
 set my_personalpass=`pass mutt/colinrmahnsgmail`
 set my_brookdalepass=`pass mutt/brookdale`
 set my_njitpass=`pass mutt/njit`
@@ -42,24 +42,14 @@ folder-hook goatman93@gmail.com 'source ~/.mutt/accounts/goatman93gmail.account'
 source "~/.mutt/accounts/colinrmahnsgmail.account"
 folder-hook colinrmahns@gmail.com 'source ~/.mutt/accounts/colinrmahnsgmail.account'
 
-# Brookdale
-source "~/.mutt/accounts/brookdale.account"
-folder-hook cmahns1@mail.brookdalecc.edu 'source ~/.mutt/accounts/brookdale.account'
-
-# NJIT
-source "~/.mutt/accounts/njit.account"
-folder-hook crm38@njit.edu 'source ~/.mutt/accounts/njit.account'
-
-# Riseup
+ Riseup
 source "~/.mutt/accounts/riseup.account"
 folder-hook colinmahns@riseup.net 'source ~/.mutt/accounts/riseup.account'
 
 ## Shortcuts
 macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/goatman93gmail.account<enter><change-folder>!<enter>'
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/colinrmahnsgmail.account<enter><change-folder>!<enter>'
-macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/accounts/brookdale.account<enter><change-folder>!<enter>'
-macro index,pager <f5> '<sync-mailbox><enter-command>source ~/.mutt/accounts/njit.account<enter><change-folder>!<enter>'
-macro index,pager <f6> '<sync-mailbox><enter-command>source ~/.mutt/accounts/riseup.account<enter><change-folder>!<enter>'
+macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/accounts/riseup.account<enter><change-folder>!<enter>'
 
 
 # Random settings
