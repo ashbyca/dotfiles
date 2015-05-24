@@ -1,0 +1,10 @@
+# feeds
+auto-reload yes
+reload-time 120
+reload-threads 4
+download-retries 4
+download-timeout 10
+
+bind-key k up
+bind-key j down
+bind-key O open-in-browser-and-mark-read

@@ -1,9 +1,9 @@
 # Shitty hacked together mutt config
 
 # don't use shitty crypto
-set ssl_use_sslv3=no
-set ssl_force_tls=yes
-set ssl_starttls=yes
+#set ssl_use_sslv3=no
+#set ssl_force_tls=yes
+#set ssl_starttls=yes
 set header_cache = "~/.cache/mutt"
 set imap_check_subscribed
 set imap_keepalive = 300
@@ -24,7 +24,7 @@ set user_agent=no
 #source $alias_file
 
 ## Passwords
-#set my_junkpass=`pass mutt/goatman93gmail`
+set my_junkpass=`pass mutt/goatman93gmail`
 set my_personalpass=`pass mutt/colinrmahnsgmail`
 set my_brookdalepass=`pass mutt/brookdale`
 set my_njitpass=`pass mutt/njit`
@@ -42,7 +42,7 @@ folder-hook goatman93@gmail.com 'source ~/.mutt/accounts/goatman93gmail.account'
 source "~/.mutt/accounts/colinrmahnsgmail.account"
 folder-hook colinrmahns@gmail.com 'source ~/.mutt/accounts/colinrmahnsgmail.account'
 
- Riseup
+# Riseup
 source "~/.mutt/accounts/riseup.account"
 folder-hook colinmahns@riseup.net 'source ~/.mutt/accounts/riseup.account'
 

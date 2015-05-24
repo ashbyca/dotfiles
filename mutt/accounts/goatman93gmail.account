@@ -9,7 +9,7 @@ set postponed = +Drafts
 set record = +Sent
 
 ## Send options.
-set smtp_url=smtps://$my_junkuser:$my_junkpass@smtp.gmail.com
+set smtp_url=smtps://$my_junkuser:$my_junkpass@smtp.gmail.com/
 set realname='Colin Mahns'
 set from=$my_junkuser
 set hostname="gmail.com"

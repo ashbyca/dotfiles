@@ -9,7 +9,7 @@ set postponed = +Drafts
 set record = +Sent
 
 ## Send options.
-set smtp_url=smtps://$my_riseupuser:$my_riseuppass@smtp.riseup.net
+set smtp_url=smtps://$my_riseupuser:$my_riseuppass@smtp.riseup.net/
 set realname='Colin Mahns'
 set from=$my_riseupuser
 set hostname="riseup.net"
