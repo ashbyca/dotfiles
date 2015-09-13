@@ -22,7 +22,8 @@ alias unmount='umount'
 
 # rss
 if [ -x /usr/bin/torify ]; then
-	alias newsbeuter='torify newsbeuter -r'
+	alias newsbeuter='torify newsbeuter -r 2>/dev/null'
+	alias mutt="torify mutt 2>/dev/null"
 else
 	alias newsbeuter='newsbeuter -r'
 fi

@@ -1,47 +1,24 @@
-# Shitty hacked together mutt config
+# Modified from Ben Nagy's gpgmutt.md because my old one broke
+# https://gist.github.com/bnagy/8914f712f689cc01c267
 
-# don't use shitty crypto
-#set ssl_use_sslv3=no
-#set ssl_force_tls=yes
-#set ssl_starttls=yes
-set header_cache = "~/.cache/mutt"
-set imap_check_subscribed
-set imap_keepalive = 300
-unset imap_passive
-bind index "^" imap-fetch-mail
-
-set mail_check = 60
-set mbox_type=Maildir
-set sort=threads 
-set sig_on_top = yes
-#my_header="X-PGP-Key: http://pgp.mit.edu:11371/pks/lookup?op=get&search=0x89BF838C"
-
-# Hide some stuff
-set user_agent=no
-
-# Addresses
-#set alias_file = "~/Documents/contacts"
-#source $alias_file
+set realname="Colin Mahns"
 
 ## Passwords
+# requires pass https://packages.debian.org/jessie/pass
+# apt-get install pass
 set my_junkpass=`pass mutt/goatman93gmail`
 set my_personalpass=`pass mutt/colinrmahnsgmail`
-set my_brookdalepass=`pass mutt/brookdale`
-set my_njitpass=`pass mutt/njit`
 set my_riseuppass=`pass mutt/riseup`
 
 ## Accounts
-
 # Gmail (Junk / Main)
 source "~/.mutt/accounts/goatman93gmail.account"
 # Here we use the $folder variable that has just been set in the sourced file.
 # We must set it right now otherwise the 'folder' variable will change in the next sourced file.
 folder-hook goatman93@gmail.com 'source ~/.mutt/accounts/goatman93gmail.account'
-
 # Gmail (Everything else)
 source "~/.mutt/accounts/colinrmahnsgmail.account"
 folder-hook colinrmahns@gmail.com 'source ~/.mutt/accounts/colinrmahnsgmail.account'
-
 # Riseup
 source "~/.mutt/accounts/riseup.account"
 folder-hook colinmahns@riseup.net 'source ~/.mutt/accounts/riseup.account'
@@ -51,23 +28,92 @@ macro index,pager <f2> '<sync-mailbox><enter-command>source ~/.mutt/accounts/goa
 macro index,pager <f3> '<sync-mailbox><enter-command>source ~/.mutt/accounts/colinrmahnsgmail.account<enter><change-folder>!<enter>'
 macro index,pager <f4> '<sync-mailbox><enter-command>source ~/.mutt/accounts/riseup.account<enter><change-folder>!<enter>'
 
+## Sidebar Stuff
+set sidebar_visible=no
+set sidebar_width=30
+## error on debian
+# set sidebar_folderindent=yes
+set sidebar_sort=yes
+## error on debian
+# set sidebar_shortpath=yes
+set sidebar_delim=" | "
+color sidebar_new brightred default
+# b toggles sidebar visibility
+macro index b '<enter-command>toggle sidebar_visible<enter>'
+macro pager b '<enter-command>toggle sidebar_visible<enter>'
+# Remap bounce-message function to Ã¢â‚¬Å“BÃ¢â‚¬Â�
+bind index B bounce-message
 
-# Random settings
-set editor='vim + -c "set textwidth=72" -c "set wrap" -c "set nocp" -c "setlocal spell" -c "?^$"'
+# unset ssl_ca_certificates_file
+# unset ssl_usesystemcerts
 
-# Mail-check preferences
-set timeout=60	#Check for mail every minute
-set mail_check=5
-hdr_order Date: From: Subject:
+# SSL hardening
+set ssl_force_tls=yes
+set ssl_starttls=yes
+## this value isn't found in debian's mutt, had to comment out
+# set ssl_use_sslv2=no
+set ssl_use_sslv3=no
+set ssl_use_tlsv1=no
+set ssl_use_tlsv1_1=no
+set ssl_use_tlsv1_2=yes
+set ssl_verify_dates=yes
+set ssl_verify_host=yes
 
-# For HTML emails
-set mailcap_path = ~/.mutt/mailcap
-auto_view text/html
-alternative_order text/plain text/html
+set header_cache=/.mutt/headercache
+set certificate_file=~/.mutt/certificates
+# looks like you must explicitly do this to make sure you
+# don't save local copies of sent mail >:(
+unset record
 
-# Forward attachments with email
-set mime_forward=yes
-set mime_forward_rest=yes
+set move = no
+set hostname=`$HOSTNAME`                  # Name of our local host.
+set hidden_host                           # Hide host details.
+set envelope_from                         # set the envelope-from information
+set reverse_name=yes                      # build From: in the reply based on the To: address (must have
+set alias_file=~/.mutt/aliases            # Keep aliases in this file.
+set postpone=ask-no                       # Ask about postponing.
+set print=ask-yes                         # Ask before printing.
+set delete=no                             # Ask before doing a delete.
+set include                               # Include the message in replies.
+set sort=threads                          # always sort by thread
+set sort_aux=date-received                # Sort threads by date received.
+set charset=iso-8859-1                    # One of those days in England...
+set noallow_8bit                          # 8bit isn't safe via Demon.
+set ascii_chars=yes                       # use ascii characters when displaying trees
+set meta_key=yes                          # allow to use alt or ESC
+set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
+set edit_headers                          # I want to edit the message headers.
+set fast_reply                            # skip initial prompts when replying
+#set nohelp                                # don't show the help line at the top
+set editor="vim +13 -c 'set nobackup' -c 'set noswapfile' -c 'set nowritebackup' -c 'set tw=72 ft=mail noautoindent'"
+set nomark_old                            # Don't mark unread new msgs as old.
+set nobeep                                # We don't need no beeping software.
+set nosmart_wrap                          # Don't want smart wrapping.
+set nomarkers                             # Don't want any wrap markers.
+set mime_forward                          # Forward message as MIME attachments.
+set pager_context=3                       # Display 3 lines of context in pager.
+set pager_index_lines=20
+set nostrict_threads                      # Lets have some fuzzy threading.
+set nopipe_decode                         # Don't decode messages when piping.
+set text_flowed                           # label messages as format-flowed
+set print_command="enscript --font=Times-Roman10 --pretty-print"
+set tilde                                 # Fill out messages with '~'.
+set read_inc=100                          # Read counter ticks every 100 msgs.
+set write_inc=100                         # Write counter ticks every 100 msgs.
+set noconfirmappend                       # Just append, don't hassle me.
+set pager_stop                            # Don't skip msgs on next page.
 
-#source "~/.mutt/colors/mutt-colors-solarized-dark-16.muttrc"
-source "~/.mutt/pgp"
+macro index <esc>m "T~N<enter>;WNT~O<enter>;WO\CT~T<enter>" "mark all messages read"
+
+# What we consider to be a quote.
+set quote_regexp="^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set to_chars=" +TCF "                     # Drop the "L".
+
+source ~/.mutt/pgp            # Use GPG
+# source ~/.mutt/solarized_light_16.muttrc
+# source ~/.mutt/headers        # Configure header display.
+
+# Last, but not least, get mutt to display its version on startup.
+push <show-version>
+message-hook '!(~g|~G) ~b"^-----BEGIN\ PGP\ (SIGNED\ )?MESSAGE"' "exec check-traditional-pgp"
+auto_view text/html                       # eg with links --dump
