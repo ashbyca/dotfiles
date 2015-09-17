@@ -8,3 +8,7 @@ download-timeout 10
 bind-key k up
 bind-key j down
 bind-key O open-in-browser-and-mark-read
+
+# no identifiers please 
+# same as Tor Browser Bundle -- since this will be passed over Tor, it will _hopefully_ look like TBB
+user-agent "Mozilla/5.0 (Windows NT 6.1; rv:38.0) Gecko/20100101 Firefox/38.0"

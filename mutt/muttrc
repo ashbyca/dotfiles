@@ -44,8 +44,8 @@ macro pager b '<enter-command>toggle sidebar_visible<enter>'
 # Remap bounce-message function to Ã¢â‚¬Å“BÃ¢â‚¬Â�
 bind index B bounce-message
 
-# unset ssl_ca_certificates_file
-# unset ssl_usesystemcerts
+unset ssl_ca_certificates_file
+unset ssl_usesystemcerts
 
 # SSL hardening
 set ssl_force_tls=yes
