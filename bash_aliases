@@ -10,6 +10,8 @@ alias ..='cd ..'
 alias rm='rm -I'
 alias cp='cp -i'
 alias mv='mv -i'
+# set up how i like to review directory structures
+alias ca='ls -laGh"
 # Send to a pastebin site with, $ cat [file] |sprunge
 #alias sprunge='curl -F \'sprunge=<-\' http://sprunge.us'
 alias dhcp-kill='sudo dhcpcd -k; sudo dhcpcd'
