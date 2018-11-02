@@ -15,6 +15,10 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 ### Enable aliases to be sudo’ed
 alias sudo='sudo '
 
+### Cloud Ready!
+#alias cyberlab='ssh -i "/Users/profile/.ssh/cyberlab-mgmt.pem" ubuntu@ec2-34-233-121-210.compute-1.amazonaws.com'
+alias cyberlab='ssh -i "/Users/profile/.ssh/gcp-cyberlab" ashbyc@35.185.58.161'
+
 ### Default directory listing
 alias ls='ls -lahg'
 
