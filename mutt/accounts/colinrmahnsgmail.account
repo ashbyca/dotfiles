@@ -1,4 +1,4 @@
-set my_personaluser = colinrmahns@gmail.com 
+set my_personaluser = colinrmahns 
 
 ## Receive options.
 set imap_user=$my_personaluser
@@ -15,8 +15,6 @@ set from=$my_personaluser
 set hostname="gmail.com"
 #set signature=~/.mutt/sigs/gmail.sig
 # Connection options
-set ssl_force_tls = yes
-unset ssl_starttls
 
 ## Hook -- IMPORTANT!
 account-hook $folder "set imap_user=$my_personaluser imap_pass=$my_personalpass"

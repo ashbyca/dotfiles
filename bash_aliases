@@ -17,10 +17,23 @@ alias ca='ls -laGh"
 alias dhcp-kill='sudo dhcpcd -k; sudo dhcpcd'
 # What I type when I get angry
 alias shutup='sudo !!'
+alias fucking='sudo'
 
 # Stupid aliases that only exist because I'm too stupid to remember the actual command
 alias unmount='umount'
-alias ifconfig='ip addr'
+
+# rss
+if [ -x /usr/bin/torify ]; then
+	alias newsbeuter='torify newsbeuter -r 2>/dev/null'
+	alias mutt="torify mutt 2>/dev/null"
+else
+	alias newsbeuter='newsbeuter -r'
+fi
+
+# stop keybase from leaking data
+if [ -x /usr/local/bin/keybase ]; then
+	alias keybase='keybase --tor'
+fi
 
 # BOFH
 alias excuse='nc towel.blinkenlights.nl 666'

@@ -1,0 +1,21 @@
+set my_riseupuser = colinmahns@riseup.net 
+
+## Receive options.
+set imap_user=$my_riseupuser
+set imap_pass=$my_riseuppass
+set folder = imaps://$my_riseupuser@zsolxunfmbfuq7wf.onion/
+set spoolfile = +INBOX
+set postponed = +Drafts
+set record = +Sent
+
+## Send options.
+set smtp_url=smtps://$my_riseupuser:$my_riseuppass@zsolxunfmbfuq7wf.onion/
+set realname='Colin Mahns'
+set from=$my_riseupuser
+set hostname="riseup.net"
+
+# TOFU goes here
+set certificate_file=~/.mutt/riseupcertificates
+
+## Hook -- IMPORTANT!
+account-hook $folder "set imap_user=$my_riseupuser imap_pass=$my_riseuppass"
